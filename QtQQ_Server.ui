@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>QtqqServerClass</class>
- <widget class="QDialog" name="QtqqServerClass">
+ <class>QtQQ_ServerClass</class>
+ <widget class="QDialog" name="QtQQ_ServerClass">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>QtqqServer</string>
+   <string>QtQQ_Server</string>
   </property>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
@@ -97,23 +97,23 @@
       <x>20</x>
       <y>0</y>
       <width>250</width>
-      <height>200</height>
+      <height>201</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../Desktop/QTQQ_Server/tiger.png</pixmap>
+     <pixmap>qiniu.png</pixmap>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>200</y>
-      <width>291</width>
-      <height>281</height>
+      <y>210</y>
+      <width>299</width>
+      <height>291</height>
      </rect>
     </property>
     <property name="title">
@@ -124,7 +124,7 @@
       <rect>
        <x>0</x>
        <y>170</y>
-       <width>291</width>
+       <width>299</width>
        <height>3</height>
       </rect>
      </property>
@@ -132,11 +132,24 @@
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>20</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>员工部门：</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
        <width>72</width>
        <height>15</height>
       </rect>
@@ -149,22 +162,22 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>40</y>
+       <y>80</y>
        <width>72</width>
        <height>15</height>
       </rect>
      </property>
      <property name="text">
-      <string>员工头像:</string>
+      <string>员工寸照：</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="employee_dep_box">
+    <widget class="QComboBox" name="employeeDepBox">
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>0</y>
+       <y>10</y>
        <width>113</width>
-       <height>22</height>
+       <height>28</height>
       </rect>
      </property>
      <item>
@@ -183,98 +196,62 @@
       </property>
      </item>
     </widget>
-    <widget class="QLineEdit" name="name_line_edit">
+    <widget class="QLineEdit" name="nameLineEdit">
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>30</y>
+       <y>40</y>
        <width>113</width>
-       <height>22</height>
+       <height>28</height>
       </rect>
      </property>
      <property name="placeholderText">
       <string>请输入员工姓名</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="select_picture_btn">
+    <widget class="QPushButton" name="selectPictureBtn">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>60</y>
-       <width>31</width>
-       <height>22</height>
+       <x>242</x>
+       <y>70</y>
+       <width>41</width>
+       <height>28</height>
       </rect>
      </property>
      <property name="text">
       <string>...</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QPushButton" name="addBtn">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>140</y>
+       <width>113</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>新增员工</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="headLabel">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>70</y>
+       <width>91</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>  员工寸照</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="departmentBox">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>0</y>
-       <width>72</width>
-       <height>15</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>员工部门：</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>120</y>
-       <width>113</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>新增员工</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="head_label">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>60</y>
-       <width>91</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>  员工头像</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="comboBox_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>180</y>
-       <width>113</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="add_btn">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>120</y>
-       <width>113</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>新增员工</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="department_box">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
        <y>180</y>
        <width>113</width>
        <height>28</height>
@@ -301,7 +278,7 @@
       </property>
      </item>
     </widget>
-    <widget class="QPushButton" name="query_department_btn">
+    <widget class="QPushButton" name="queryDepartmentBtn">
      <property name="geometry">
       <rect>
        <x>170</x>
@@ -314,11 +291,11 @@
       <string>查询员工</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="queryid_btn">
+    <widget class="QPushButton" name="queryIDBtn">
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>214</y>
+       <y>210</y>
        <width>113</width>
        <height>28</height>
       </rect>
@@ -327,11 +304,11 @@
       <string>查询员工</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="queryid_lineedit">
+    <widget class="QLineEdit" name="queryIDLineEdit">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>214</y>
+       <x>10</x>
+       <y>210</y>
        <width>113</width>
        <height>28</height>
       </rect>
@@ -340,11 +317,11 @@
       <string>请输入员工ID号</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="logout_btn">
+    <widget class="QPushButton" name="logoutBtn">
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>250</y>
+       <y>240</y>
        <width>113</width>
        <height>28</height>
       </rect>
@@ -353,11 +330,11 @@
       <string>注销员工</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="logoutid_lineedit">
+    <widget class="QLineEdit" name="logoutIDLineEdit">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>250</y>
+       <x>10</x>
+       <y>240</y>
        <width>113</width>
        <height>28</height>
       </rect>
@@ -371,7 +348,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="qtqqserver.qrc"/>
+  <include location="QtQQ_Server.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -1,54 +1,52 @@
-ï»¿#pragma once
+#pragma once
 
 #include <QtWidgets/QDialog>
-#include "ui_qtqqserver.h"
-#include <qudpsocket.h>
+#include "ui_QtQQ_Server.h"
+#include "TcpServer.h"
 #include <QSqlQueryModel>
 #include <QTimer>
-#include "tcp_server.h"
-class QtqqServer : public QDialog
+#include <QUdpSocket>
+
+class QtQQ_Server : public QDialog
 {
     Q_OBJECT
 
 public:
-    QtqqServer(QWidget *parent = nullptr);
-    ~QtqqServer();
-    
-private:
-    void InitComboBoxData();  //åˆå§‹åŒ–ç»„åˆæ¡†æ•°æ®
-    void InitTcpSocket();   //åˆå§‹åŒ–TCP
-    void InitUdpSocket();   //åˆå§‹åŒ–UDP
-    bool ConnectDatabase();
+    QtQQ_Server(QWidget *parent = Q_NULLPTR);
 
-    int GetComDepID();          //å…¬å¸éƒ¨é—¨ID
-    void SetDepNameMap();
-    void SetStatusMap();
-    void SetOnlineMap();
-    void UpdateTableData(int dep_id = 0,int employ_id = 0);
-   
+private:
+	void initComboBoxData();	//³õÊ¼»¯×éºÏ¿òµÄÊı¾İ
+	void initTcpSocket();		//³õÊ¼»¯TCP
+	void initUdpSocket();		//³õÊ¼»¯UDP
+	bool connectMySql();
+	void setDepNameMap();
+	void setStatusMap();
+	void setOnlineMap();
+	int getCompDepID();			//»ñÈ¡¹«Ë¾ÈºQQºÅ
+	void updateTableData(int depID = 0,int employeeID = 0);
+
 private slots:
-    void OnUdpBroadMsg(QByteArray& bt_data);
-    void OnRefresh();
-    void on_query_department_btn_clicked();     //ç‚¹å‡»ä¿¡æ¯ä¸æ§½å‡½æ•°è‡ªåŠ¨è¿æ¥
-    void on_queryid_btn_clicked();              //æ ¹æ®å‘˜å·¥QQå·ç­›é€‰
-    void on_logout_btn_clicked();               //æ³¨é”€å‘˜å·¥QQå·
-    void on_select_picture_btn_clicked();       //é€‰æ‹©å›¾ç‰‡å‘˜å·¥çš„å¯¸ç…§
-    void on_add_btn_clicked();                  //æ–°å¢å‘˜å·¥
+	void onUDPbroadMsg(QByteArray& btData);
+	void onRefresh();
+	void on_queryDepartmentBtn_clicked();//¸ù¾İÈºQQºÅ²éÕÒÔ±¹¤(µã»÷ĞÅºÅÓë²Ûº¯Êı×Ô¶¯Á¬½Ó)
+	void on_queryIDBtn_clicked();		//¸ù¾İÔ±¹¤QQºÅÉ¸Ñ¡
+	void on_logoutBtn_clicked();		//×¢ÏúÔ±¹¤QQºÅ
+	void on_selectPictureBtn_clicked();	//Ñ¡ÔñÍ¼Æ¬£¨Ô±¹¤µÄ´çÕÕ£©
+	void on_addBtn_clicked();	//ĞÂÔöÔ±¹¤
 private:
-    Ui::QtqqServerClass ui;
-    QTimer* timer_; //å®šæ—¶åˆ·æ–°æ•°æ®
-    int compony_depid_;                   //å…¬å¸ç¾¤QQå·
-    int dep_id_;                           //éƒ¨é—¨QQå·
-    int employee_id_;                      //å‘˜å·¥QQå·
+    Ui::QtQQ_ServerClass ui;
 
-    QString pic_path_;                    //å¤´åƒè·¯å¾„
-    QMap<QString, QString> status_map_;   //çŠ¶æ€
-    QMap<QString, QString> dep_name_map_; //éƒ¨é—¨åç§°
-    QMap<QString, QString> online_map_;   //åœ¨çº¿
-    TcpServer* tcp_server_;              //tcpæœåŠ¡å™¨ 
-    QUdpSocket* udp_sender_;            //tcpæœåŠ¡å™¨ 
-    //æŸ¥è¯¢æ‰€æœ‰å‘˜å·¥ä¿¡æ¯æ¨¡å‹
-    QSqlQueryModel queryinfo_model_;
+	QTimer* m_timer;	//¶¨Ê±Ë¢ĞÂÊı¾İ
+	int m_compDepID;	//¹«Ë¾ÈºQQºÅ
+	int m_depID;		//²¿ÃÅQQºÅ
+	int m_employeeID;	//Ô±¹¤QQºÅ
+	QString m_pixPath;	//Í·ÏñÂ·¾¶
+	QMap<QString, QString> m_statusMap;	//×´Ì¬
+	QMap<QString, QString>m_depNameMap;	//²¿ÃÅÃû³Æ
+	QMap<QString, QString>m_onlineMap;	//ÔÚÏß
 
+	QSqlQueryModel m_queryInfoModel;//²éÑ¯ËùÓĞÔ±¹¤µÄĞÅÏ¢Ä£ĞÍ
+
+	TcpServer* m_tcpServer;	//tcp·şÎñ¶Ë
+	QUdpSocket* m_udpSender;//udp¹ã²¥
 };
-

@@ -1,10 +1,10 @@
-#include "qtqq_server.h"
+#include "QtQQ_Server.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QtqqServer w;
+    QtQQ_Server w;
     w.show();
     return a.exec();
 }
